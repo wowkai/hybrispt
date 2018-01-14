@@ -3039,3 +3039,44 @@
 2018-14-01 17:14:16  INFO [libs.ActionsWithOurWebElements] : Element TRACK MY ORDER was clicked
 2018-14-01 17:16:21  INFO [pages.HomePage] : Homepage was opened
 2018-14-01 17:16:23  INFO [libs.ActionsWithOurWebElements] : Element TRACK MY ORDER was clicked
+2018-14-01 20:22:56  INFO [pages.HomePage] : Homepage was opened
+2018-14-01 20:22:56  ERROR [libs.ActionsWithOurWebElements] : Can not work with input 
+2018-14-01 21:12:25  INFO [pages.HomePage] : Homepage was opened
+2018-14-01 21:12:55  ERROR [libs.ActionsWithOurWebElements] : Can not work with input 
+2018-14-01 21:13:03  INFO [pages.HomePage] : Homepage was opened
+2018-14-01 21:13:03  INFO [libs.ActionsWithOurWebElements] : Agitator was inputed to input 
+2018-14-01 21:13:09  INFO [libs.ActionsWithOurWebElements] : Element SEARCH was clicked
+2018-14-01 21:13:16  INFO [pages.HomePage] : Homepage was opened
+2018-14-01 21:13:16  INFO [libs.ActionsWithOurWebElements] : General was inputed to input 
+2018-14-01 21:13:19  INFO [libs.ActionsWithOurWebElements] : Element SEARCH was clicked
+2018-14-01 21:13:27  INFO [pages.HomePage] : Homepage was opened
+2018-14-01 21:13:27  INFO [libs.ActionsWithOurWebElements] : AAAAAAAAAAA was inputed to input 
+2018-14-01 21:13:29  INFO [libs.ActionsWithOurWebElements] : Element SEARCH was clicked
+2018-14-01 21:13:36  INFO [pages.HomePage] : Homepage was opened
+2018-14-01 21:13:37  INFO [libs.ActionsWithOurWebElements] : GSL50506058 was inputed to input 
+2018-14-01 21:13:42  INFO [libs.ActionsWithOurWebElements] : Element SEARCH was clicked
+2018-14-01 21:14:27  INFO [pages.HomePage] : Homepage was opened
+2018-14-01 21:14:28  INFO [libs.ActionsWithOurWebElements] : Element Bulk Order was clicked
+2018-14-01 21:17:06  INFO [pages.HomePage] : Homepage was opened
+2018-14-01 21:17:07  INFO [libs.ActionsWithOurWebElements] : Element Bulk Order was clicked
+2018-14-01 21:21:08  INFO [pages.HomePage] : Homepage was opened
+2018-14-01 21:21:08  INFO [pages.HomePage] : Homepage was opened
+2018-14-01 21:21:08  INFO [pages.HomePage] : Homepage was opened
+2018-14-01 21:21:08  INFO [libs.ActionsWithOurWebElements] : GEM-110 was inputed to input 
+2018-14-01 21:21:10  INFO [libs.ActionsWithOurWebElements] : Element Bulk Order was clicked
+2018-14-01 21:21:12  INFO [libs.ActionsWithOurWebElements] : Element SEARCH was clicked
+2018-14-01 21:21:18  ERROR [libs.ActionsWithOurWebElements] : Can not work with element
+2018-14-01 21:21:20  INFO [pages.HomePage] : Homepage was opened
+2018-14-01 21:21:20  INFO [libs.ActionsWithOurWebElements] : Agitator was inputed to input 
+2018-14-01 21:21:25  INFO [libs.ActionsWithOurWebElements] : Element SEARCH was clicked
+2018-14-01 21:21:26  INFO [pages.HomePage] : Homepage was opened
+2018-14-01 21:21:32  INFO [pages.HomePage] : Homepage was opened
+2018-14-01 21:21:33  INFO [libs.ActionsWithOurWebElements] : General was inputed to input 
+2018-14-01 21:21:35  INFO [libs.ActionsWithOurWebElements] : Element SEARCH was clicked
+2018-14-01 21:21:36  ERROR [libs.ActionsWithOurWebElements] : Can not work with element
+2018-14-01 21:21:42  INFO [pages.HomePage] : Homepage was opened
+2018-14-01 21:21:43  INFO [libs.ActionsWithOurWebElements] : AAAAAAAAAAA was inputed to input 
+2018-14-01 21:21:46  INFO [libs.ActionsWithOurWebElements] : Element SEARCH was clicked
+2018-14-01 21:21:53  INFO [pages.HomePage] : Homepage was opened
+2018-14-01 21:21:53  INFO [libs.ActionsWithOurWebElements] : GSL50506058 was inputed to input 
+2018-14-01 21:21:59  INFO [libs.ActionsWithOurWebElements] : Element SEARCH was clicked
