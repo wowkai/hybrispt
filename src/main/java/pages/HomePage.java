@@ -290,4 +290,8 @@ public class HomePage extends ParentPage {
             return false;
         }
     }
+
+    public void clickOnPaymentDetailsLink() {
+        actionsWithOurWebElements.clickOnWebElement(".//div[@id='accNavComponentDesktopOne']//a[@href='/my-account/payment-details']");
+    }
 }

@@ -11,7 +11,8 @@ import pt_Global_Header_Tests.Global_Search_Tests;
 @Suite.SuiteClasses({
         BulkOrderHeader_Tests.class,
         Find_Equipment_Manuals_Search_Tests.class,
-        Global_Search_Tests.class
+        Global_Search_Tests.class,
+
        //AddProductsToCartTest.class,
         //AddProductToMyPartsTest.class,
         //PlaceOrderTest.class

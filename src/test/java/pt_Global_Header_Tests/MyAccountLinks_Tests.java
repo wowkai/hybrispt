@@ -23,7 +23,7 @@ public class MyAccountLinks_Tests extends ParentTest {
     }
 
     @Test
-    // test if user can open MyProfile page
+    // test if user can open AddressBook page
     public void openAddressBookPageTest() throws IOException {
         Map dataFromExcelForLogin = excelDriver.getData(ConfigData.getCfgValue("GlobalHeader_Config_file"), "keywords");
 
@@ -33,5 +33,18 @@ public class MyAccountLinks_Tests extends ParentTest {
         homePage.hoverOnMyAccountIcon();
         homePage.clickOnMyAddressBookLink();
         checkAcceptanceCriteria("My profile page isn't opened", myAccountPages.getTemplate().contains("address-book"), true);
+    }
+
+    @Test
+    // test if user can open PaymentDetails page
+    public void openPaymentDetailsPageTest() throws IOException {
+        Map dataFromExcelForLogin = excelDriver.getData(ConfigData.getCfgValue("GlobalHeader_Config_file"), "keywords");
+
+        homePage.openHomePage();
+        homePage.clickOnLoginLink();
+        loginPage.validLogin(dataFromExcelForLogin.get("Valid_login").toString(), dataFromExcelForLogin.get("Valid_password").toString());
+        homePage.hoverOnMyAccountIcon();
+        homePage.clickOnPaymentDetailsLink();
+        checkAcceptanceCriteria("My profile page isn't opened", myAccountPages.getTemplate().contains("accountLayoutPage"), true);
     }
 }
