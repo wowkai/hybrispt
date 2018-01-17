@@ -35,6 +35,8 @@ public class ParentTest {
     public BulkOrderPage bulkOrderPage;
     public TrackMyOrderPage trackMyOrderPage;
     public OrderDetailsStatusPage orderDetailsStatusPage;
+    public MyProfilePage myProfilePage;
+
     private Utils utils = new Utils();
     private boolean isTestPass = false;
     private String pathToScreenShot;
@@ -69,6 +71,7 @@ public class ParentTest {
         bulkOrderPage = new BulkOrderPage(driver);
         trackMyOrderPage = new TrackMyOrderPage(driver);
         orderDetailsStatusPage = new OrderDetailsStatusPage(driver);
+        myProfilePage = new MyProfilePage(driver);
 
         excelDriver = new ExcelDriver();
     }

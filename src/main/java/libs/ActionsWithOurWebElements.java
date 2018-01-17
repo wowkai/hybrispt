@@ -160,4 +160,17 @@ public class ActionsWithOurWebElements {
             Assert.fail("Can not hover on element ");
         }
     }
+
+    public String getValueFromInputField(WebElement input) {
+        try {
+            logger.info("Value was get from input ");
+            System.out.println(input.getAttribute("Value"));
+            return input.getAttribute("Value");
+
+        } catch (Exception e) {
+            logger.error("Can not work with input ");
+            Assert.fail("Can not work with input ");
+            return "";
+        }
+    }
 }
