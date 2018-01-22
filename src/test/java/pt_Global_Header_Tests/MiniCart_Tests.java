@@ -1,7 +1,7 @@
 package pt_Global_Header_Tests;
 
 import libs.ConfigData;
-import org.junit.Test;
+import org.testng.annotations.Test;
 import parentTest.ParentTest;
 
 import java.io.IOException;

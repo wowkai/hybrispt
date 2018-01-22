@@ -4,7 +4,7 @@ package allTests;
  * This is a test for verification of adding products to shopping cart and cleaning shopping cart
  */
 
-import org.junit.Test;
+import org.testng.annotations.Test;
 import parentTest.ParentTest;
 
 public class AddProductsToCartTest extends ParentTest {

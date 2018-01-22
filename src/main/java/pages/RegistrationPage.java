@@ -3,8 +3,8 @@ package pages;
  * Registration or Create an Account page is the page where user could create new account
  */
 
+import junit.framework.Assert;
 import org.openqa.selenium.WebDriver;
-import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 

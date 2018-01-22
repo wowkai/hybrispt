@@ -4,7 +4,7 @@ package allTests;
  * This is a test for verification add to MyParts feature
  */
 
-import org.junit.Test;
+import org.testng.annotations.Test;
 import parentTest.ParentTest;
 
 public class AddProductToMyPartsTest extends ParentTest {

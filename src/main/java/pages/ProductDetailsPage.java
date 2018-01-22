@@ -4,7 +4,6 @@ package pages;
  * Product details page shows information about product: name, image, stock status, quantity and add to cart feature, etc
  */
 
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

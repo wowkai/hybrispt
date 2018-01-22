@@ -1,6 +1,6 @@
 package pt_Global_Header_Tests;
 
-import org.junit.Test;
+import org.testng.annotations.Test;
 import parentTest.ParentTest;
 
 public class BulkOrderHeader_Tests extends ParentTest {

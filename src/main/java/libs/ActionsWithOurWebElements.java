@@ -4,8 +4,8 @@ package libs;
  * This is class which desribes all basic and reusable operation with web elements
  * */
 
+import junit.framework.Assert;
 import org.apache.log4j.Logger;
-import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

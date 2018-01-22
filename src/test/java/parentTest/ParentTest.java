@@ -2,20 +2,17 @@ package parentTest;
 
 import libs.ExcelDriver;
 import libs.Utils;
-import org.junit.After;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Rule;
-import org.junit.rules.TestName;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import pages.*;
 
 import java.io.File;
 import java.util.concurrent.TimeUnit;
 
-import static org.hamcrest.CoreMatchers.is;
 
 public class ParentTest {
     WebDriver driver;
@@ -42,12 +39,12 @@ public class ParentTest {
     private String pathToScreenShot;
     public ExcelDriver excelDriver;
 
-    @Rule
-    public TestName testName = new TestName();
+    //@Rule
+    //public TestName testName = new TestName();
 
-    @Before
+    @BeforeMethod
     public void setUp() {
-        pathToScreenShot = "..\\VovkA_project\\target\\screenshot\\" + this.getClass().getPackage().getName() + "\\" + this.getClass().getName() + "\\" + this.testName.getMethodName() + ".jpg";
+        //pathToScreenShot = "..\\VovkA_project\\target\\screenshot\\" + this.getClass().getPackage().getName() + "\\" + this.getClass().getName() + "\\" + this.testName.getMethodName() + ".jpg";
         File fileFF = new File("./drivers/chromedriver.exe");
         System.setProperty("webdriver.chrome.driver", fileFF.getAbsolutePath());
         ChromeOptions options = new ChromeOptions();
@@ -76,7 +73,7 @@ public class ParentTest {
         excelDriver = new ExcelDriver();
     }
 
-    @After
+    @AfterMethod
     public void tearDown() {
       driver.quit();
     }
@@ -85,7 +82,7 @@ public class ParentTest {
         if (actual != expected) {
             utils.screenShot(pathToScreenShot, driver);
         }
-        Assert.assertThat(message, actual, is(expected));
+        Assert.assertTrue(actual == expected, message);
         isTestPass = true;
     }
 
@@ -93,7 +90,7 @@ public class ParentTest {
         if (!actual.equals(expected)) {
             utils.screenShot(pathToScreenShot, driver);
         }
-        Assert.assertThat(message, actual, is(expected));
+        Assert.assertEquals(actual, expected, message);;
         isTestPass = true;
     }
 }

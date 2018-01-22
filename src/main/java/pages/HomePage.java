@@ -5,8 +5,8 @@ package pages;
  * navigation menu in header
  */
 
+import junit.framework.Assert;
 import libs.ConfigData;
-import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -70,7 +70,7 @@ public class HomePage extends ParentPage {
     @FindBy(css = "form#findEquipManuals use[href='#svg-search']")
     WebElement searchManualsIcon;
 
-    @FindBy(css = "div[data-location='header']")
+    @FindBy(css = "div[data-type='live chat'][data-location='header']")
     WebElement liveChatHeaderLink;
 
     @FindBy(css = "div.lp_desktop")
