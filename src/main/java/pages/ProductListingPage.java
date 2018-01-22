@@ -19,10 +19,10 @@ public class ProductListingPage extends ParentPage {
     @FindBy(className = "addtocart__header")
     private WebElement addToCartPopupHeader;
 
-    @FindBy(xpath = ".//*[@data-type='pop-up continue shopping']")
+    @FindBy(css = "button[data-type='pop-up continue shopping']")
     private WebElement addToCartPopupContinueShoppingButton;
 
-    @FindBy(xpath = ".//*[@data-type='pop-up proceed to checkout']")
+    @FindBy(css = "a[href='/cart/checkout']")
     private WebElement addToCartPopupCheckoutButton;
 
     public ProductListingPage(WebDriver webDriver) {

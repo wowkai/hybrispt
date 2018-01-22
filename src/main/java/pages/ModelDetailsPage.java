@@ -19,11 +19,11 @@ public class ModelDetailsPage extends ParentPage {
     @FindBy(xpath = ".//*[@class='product-help-btn__activetext' and contains(text(), 'Parts')]/../..//*[@name='productCode']")
     WebElement inputProductCode;
 
-    @FindBy(xpath = ".//*[@class='myAccountLinksHeader  js-myAccount-toggle nav__link']")
-    private WebElement linkMyAccount;
+    @FindBy(css = "a.myAccountLinksHeader")
+    WebElement linkMyAccount;
 
-    @FindBy(xpath = ".//*[@class='my-account-link-header']//*[@href='/my-account/my-parts']")
-    private WebElement linkMyParts;
+    @FindBy(css = "div#accNavComponentDesktopOne a[href='/my-account/my-parts']")
+    WebElement linkMyParts;
 
     public ModelDetailsPage(WebDriver webDriver) {
         super(webDriver);

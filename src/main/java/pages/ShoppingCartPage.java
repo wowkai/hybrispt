@@ -13,7 +13,7 @@ public class ShoppingCartPage extends ParentPage {
     @FindBy(xpath = ".//*[text()='Remove all']" )
     WebElement buttonRemoveAll;
 
-    @FindBy(xpath = ".//*[contains (text(), 'YES')]")
+    @FindBy(css = "span.js-btn-confirm")
     WebElement buttonYesOnRemoveAllPopup;
 
     @FindBy(className = "empty-cart__headline")

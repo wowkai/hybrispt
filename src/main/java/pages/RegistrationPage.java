@@ -61,7 +61,7 @@ public class RegistrationPage extends ParentPage {
     @FindBy(name = "signForPostalMailList")
     WebElement checkboxSignForPostalMailList;
 
-    @FindBy(xpath = ".//button[@data-theme='b']")
+    @FindBy(css = "button.js-secureportal-register-button")
     WebElement buttonCreateAccount;
 
     public RegistrationPage(WebDriver webDriver) {

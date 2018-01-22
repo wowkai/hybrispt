@@ -58,6 +58,9 @@ public class HomePage extends ParentPage {
     @FindBy(css = "div#accNavComponentDesktopOne a[href='/my-account/address-book']")
     WebElement linkAddressBook;
 
+    @FindBy(css = "div#accNavComponentDesktopOne a[href='/my-account/payment-details']")
+    WebElement linkPaymentDetails;
+
     @FindBy(name = "manufacturer")
     WebElement dropDownSelectManufacturer;
 
@@ -309,6 +312,6 @@ public class HomePage extends ParentPage {
     }
 
     public void clickOnPaymentDetailsLink() {
-        actionsWithOurWebElements.clickOnWebElement(".//div[@id='accNavComponentDesktopOne']//a[@href='/my-account/payment-details']");
+        actionsWithOurWebElements.clickOnWebElement(linkPaymentDetails);
     }
 }

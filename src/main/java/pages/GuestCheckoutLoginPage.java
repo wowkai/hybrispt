@@ -14,7 +14,7 @@ public class GuestCheckoutLoginPage extends ParentPage {
     @FindBy(id = "guest.email")
     WebElement guestCheckoutEmailInput;
 
-    @FindBy(xpath = ".//button[contains(text(), 'Checkout')]")
+    @FindBy(css = "form#PTGuestForm button")
     WebElement buttonCheckoutsAsGuest;
 
     public GuestCheckoutLoginPage(WebDriver webDriver) {

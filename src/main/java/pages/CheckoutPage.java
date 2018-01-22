@@ -64,25 +64,25 @@ public class CheckoutPage extends ParentPage {
     @FindBy(name = "card_cvNumber")
     WebElement inputCCVNumber;
 
-    @FindBy(xpath = ".//form[@id='silentOrderPostForm']//button")
+    @FindBy(css = "button.checkout-next")
     WebElement buttonContinueToOrderReview;
 
     @FindBy(id = "placeOrder")
     WebElement buttonPlaceOrder;
 
-    @FindBy(xpath = ".//*[@data-active-step='deliveryAddress.noPickup']")
+    @FindBy(css = "a[data-active-step='deliveryAddress.noPickup']")
     WebElement activeStepShippingInformation;
 
-    @FindBy(xpath = ".//*[@data-active-step='deliveryMethod']")
+    @FindBy(css = "a[data-active-step='deliveryMethod']")
     WebElement activeStepShippingMethod;
 
-    @FindBy(xpath = ".//*[@data-active-step='paymentMethod']")
+    @FindBy(css = "a[data-active-step='paymentMethod']")
     WebElement activeStepPaymentInformation;
 
     @FindBy(id = "useDeliveryAddress")
     WebElement checkboxSameAsShippingAddress;
 
-    @FindBy(xpath = ".//*[@data-active-step='confirmOrder']")
+    @FindBy(css = "a[data-active-step='confirmOrder']")
     WebElement activeStepOrderReview;
 
     public CheckoutPage(WebDriver webDriver) {

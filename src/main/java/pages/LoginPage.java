@@ -16,7 +16,7 @@ public class LoginPage extends ParentPage {
     @FindBy(id = "j_password")
     WebElement inputPassword;
 
-    @FindBy(xpath = ".//button[contains(text(), 'Login')]")
+    @FindBy(css = "form#loginForm button")
     WebElement buttonLogin;
 
     public LoginPage(WebDriver webDriver) {

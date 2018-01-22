@@ -12,8 +12,10 @@ public class TrackMyOrderPage extends ParentPage {
     @FindBy(id = "postalCode")
     WebElement postalCodeInputField;
 
-    @FindBy(xpath = ".//button[@type = 'submit' and contains(., 'Track My Order')]")
+    @FindBy(css = "form#orderLookUpForm button")
     WebElement trackMyOrderButton;
+
+
 
     public TrackMyOrderPage(WebDriver webDriver) {
         super(webDriver);
@@ -29,7 +31,7 @@ public class TrackMyOrderPage extends ParentPage {
     }
 
     public boolean isOrderStatusPage() {
-        return actionsWithOurWebElements.isElementPresent(".//h2[@class=' account-content__title title']");
+        return actionsWithOurWebElements.isElementPresent(".//h2[@class=' account-content__title title']"); // h2.account-content__title
     }
 
     public boolean isTrackMyOrderPage() {

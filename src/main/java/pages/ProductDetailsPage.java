@@ -13,16 +13,16 @@ public class ProductDetailsPage extends ParentPage {
     @FindBy(id = "pdpAddtoCartInput")
     private WebElement inputQuantity;
 
-    @FindBy(xpath = ".//button[contains(text(), 'Add to cart')]")
+    @FindBy(css = "div.product-block button.js-add-to-cart")
     private WebElement buttonAddToCart;
 
     @FindBy(className = "addtocart__header")
     private WebElement addToCartPopupHeader;
 
-    @FindBy(xpath = ".//*[@data-type='pop-up view cart']")
+    @FindBy(css = "a[data-type='pop-up view cart']")
     private WebElement addToCartPopupViewCartButton;
 
-    @FindBy(xpath = ".//button[@type = 'button' and contains(., 'Continue Shopping')]")
+    @FindBy(css = "button[data-type='pop-up continue shopping']")
     private WebElement continueShoppingButtonOnAddToCartPopup;
 
     public ProductDetailsPage(WebDriver webDriver) {
