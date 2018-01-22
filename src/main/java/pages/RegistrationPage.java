@@ -3,10 +3,10 @@ package pages;
  * Registration or Create an Account page is the page where user could create new account
  */
 
-import junit.framework.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.testng.Assert;
 
 public class RegistrationPage extends ParentPage {
 
@@ -129,7 +129,7 @@ public class RegistrationPage extends ParentPage {
         if (password.length() < 8) {
             Assert.fail("Minimal length of password should be at least 8 symbols. Change password and try again! ");
             logger.error("Minimal length of password should be at least 8 symbols. Change password and try again! ");
-        } else if (password.length() >= 8) {
+        } else {
             actionsWithOurWebElements.enterTextIntoInput(inputPassword, password);
         }
     }
@@ -138,7 +138,7 @@ public class RegistrationPage extends ParentPage {
         if (confirmationPassword.length() < 8) {
             Assert.fail("Minimal length of password should be at least 8 symbols. Change password and try again! ");
             logger.error("Minimal length of password should be at least 8 symbols. Change password and try again! ");
-        } else if (confirmationPassword.length() >= 8) {
+        } else {
             actionsWithOurWebElements.enterTextIntoInput(inputConfirmPassword, confirmationPassword);
         }
     }

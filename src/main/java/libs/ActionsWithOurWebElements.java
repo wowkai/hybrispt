@@ -3,8 +3,6 @@ package libs;
 /**
  * This is class which desribes all basic and reusable operation with web elements
  * */
-
-import junit.framework.Assert;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -13,6 +11,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 public class ActionsWithOurWebElements {
     WebDriver webDriver;

@@ -5,7 +5,7 @@ package pages;
  * navigation menu in header
  */
 
-import junit.framework.Assert;
+import org.testng.Assert;
 import libs.ConfigData;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

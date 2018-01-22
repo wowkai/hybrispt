@@ -79,18 +79,17 @@ public class ParentTest {
     }
 
     protected void checkAcceptanceCriteria(String message, boolean actual, boolean expected) {
-        if (actual != expected) {
-            utils.screenShot(pathToScreenShot, driver);
-        }
         Assert.assertTrue(actual == expected, message);
         isTestPass = true;
     }
 
     protected void checkAcceptanceCriteria(String message, String actual, String expected) {
-        if (!actual.equals(expected)) {
-            utils.screenShot(pathToScreenShot, driver);
-        }
-        Assert.assertEquals(actual, expected, message);;
+        //Assert.assertTrue(result, message);
         isTestPass = true;
+        Assert.assertEquals(actual, expected, message);
+
     }
 }
+
+//         //Assert.assertTrue(homePage.getTitle().equals("Test"), "Test failed");
+//        Assert.assertEquals(homePage.getTitle(),"Test", "Test failed");
