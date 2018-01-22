@@ -7,49 +7,56 @@ package pages;
 
 import libs.ConfigData;
 import org.junit.Assert;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.Set;
 
 public class HomePage extends ParentPage {
 
-    @FindBy(xpath = ".//*[text()='Thank you for registering!']")
+    //@FindBy(css="div:contains('Thank you for registering!')")
+    @FindBy(xpath = ".//div[text()='Thank you for registering!']")
     WebElement registrationText;
 
-    @FindBy(xpath = ".//*[@class='form-control' and @type='text']")
+    @FindBy(css = "input.form-control[type='text']")
+    //@FindBy(xpath = ".//*[@class='form-control' and @type='text']")
     WebElement inputSearchForm;
 
     @FindBy(className = "input-group-btn")
     WebElement buttonSearch;
 
-    @FindBy(xpath = ".//*[@title='Shop By Manufacturer']")
+    @FindBy(css = "span.nav__link a[href='/manufacturers']")
     WebElement linkShopByManufacturer;
 
-    @FindBy(xpath = ".//*[@title='Shop By Equipment']")
+    @FindBy(css = "a.sub-navigation__link--primary")
+    WebElement linkViewAllManufacturer;
+
+    @FindBy(css = "span.nav__link a[href='/equipment-categories']")
     WebElement linkShopByEquipment;
 
-    @FindBy(xpath = ".//a[@title='Inside Parts Town']")
+    @FindBy(css = "li.nav-item--inside-partstown span.nav-item__link a")
     WebElement linkInsidePT;
 
-    @FindBy(xpath = ".//*[@class='not-logged-nav-wr']/div/a[@href='/login']")
+    @FindBy(css = "a[data-type='techtown']")
+    WebElement linkTechTown;
+
+    @FindBy(css = "a.nav__link-login")
+    //@FindBy(xpath = ".//*[@class='not-logged-nav-wr']/div/a[@href='/login']")
     WebElement linkLogin;
 
-    @FindBy(xpath = ".//*[@class='not-logged-nav-wr']/div/a[@href='/register']")
+    @FindBy(css = "div.not-logged-nav a[href='/register']")
+    //@FindBy(xpath = ".//*[@class='not-logged-nav-wr']/div/a[@href='/register']")
     WebElement linkRegister;
 
-    @FindBy(xpath = ".//*[@title='PT Logo']/..")
-    WebElement siteLogo;
-
-    @FindBy(xpath = ".//*[@class='myAccountLinksHeader  js-myAccount-toggle nav__link']")
+    @FindBy(css = "a.myAccountLinksHeader")
     WebElement linkMyAccount;
+
+    @FindBy(css = "div#accNavComponentDesktopOne a[href='/my-account/update-profile']")
+    WebElement linkMyProfile;
+
+    @FindBy(css = "div#accNavComponentDesktopOne a[href='/my-account/address-book']")
+    WebElement linkAddressBook;
 
     @FindBy(name = "manufacturer")
     WebElement dropDownSelectManufacturer;
@@ -60,25 +67,41 @@ public class HomePage extends ParentPage {
     @FindBy(name = "docType")
     WebElement dropDownDocumentType;
 
-    @FindBy(xpath = ".//*[@href='#svg-search']")
+    @FindBy(css = "form#findEquipManuals use[href='#svg-search']")
     WebElement searchManualsIcon;
 
-    @FindBy(xpath = ".//*[@data-type='live chat']")
+    @FindBy(css = "div[data-location='header']")
     WebElement liveChatHeaderLink;
 
-    @FindBy(xpath = ".//*[@href='/bulk-order']")
+    @FindBy(css = "div.lp_desktop")
+    WebElement liveChatPopUp;
+
+    @FindBy(css = "a[href='/bulk-order")
     WebElement bulkOrderLink;
 
-    @FindBy(xpath = ".//*[contains(@class, 'nav-item--track-order')]//a")
+    @FindBy(css = "span.nav__link a[data-type='track my order']")
     WebElement trackMyOrderLink;
+
+    @FindBy(css = "a.lang-currencies-btn")
+    WebElement countryFlagHeader;
+
+    @FindBy(css = "a.change-country-link")
+    WebElement changeCountryLink;
+
+    @FindBy(css = "li[attr-code='US']")
+    WebElement countryUSListItem;
+
+    @FindBy(css = "button.js-change-country")
+    WebElement buttonStartShopping;
 
     @FindBy(className = "lang-currencies-selected")
     WebElement languageSelector;
 
-    @FindBy(xpath = ".//*[@class='lang-selector__item'][2]")
+    //@FindBy(xpath = ".//*[@class='lang-selector__item'][2]")
+    @FindBy(xpath = ".//input[@lang='fr']/..")
     WebElement frenchLanguageInputField;
 
-    @FindBy(xpath = ".//*[@class='lang-selector__item'][1]")
+    @FindBy(xpath = ".//input[@lang='en']/..")
     WebElement englishLanguageInputField;
 
     @FindBy(className = "lang-currencies-selected")
@@ -87,14 +110,8 @@ public class HomePage extends ParentPage {
     @FindBy(id = "country")
     WebElement inputFieldCountry;
 
-    @FindBy(xpath = ".//*[@attr-code='US']")
-    WebElement countryUSFromList;
-
-    @FindBy(xpath = ".//*[@class='mini-cart  js-mini-cart not-empty']")
+    @FindBy(css = "div.nav__minicart div.not-empty")
     WebElement miniCartIconWithProducts;
-
-
-
 
     public HomePage(WebDriver webDriver) {
         super(webDriver);
@@ -177,7 +194,7 @@ public class HomePage extends ParentPage {
     }
 
     public boolean liveChatWindowIsShown() {
-        return actionsWithOurWebElements.isElementPresent(".//*[@data-type='live chat']");
+        return actionsWithOurWebElements.isElementPresent(liveChatPopUp);
     }
 
     // Name of language in variable should be: 'FR' or 'French', 'EN' or 'English'.
@@ -205,20 +222,20 @@ public class HomePage extends ParentPage {
     }
 
     public void clickOnCountryFlag() {
-        actionsWithOurWebElements.clickOnWebElement(".//*[@class='lang-currencies-btn js-select-country-btn']");
+        actionsWithOurWebElements.clickOnWebElement(countryFlagHeader);
     }
 
     public void clickOnNotInCountryLink() {
-        actionsWithOurWebElements.clickOnWebElement(".//*[@class='link change-country-link js-show-country-change']");
+        actionsWithOurWebElements.clickOnWebElement(changeCountryLink);
     }
 
     public void selectCountryFromList(String country) {
         actionsWithOurWebElements.enterTextIntoInput(inputFieldCountry, country);
-        actionsWithOurWebElements.clickOnWebElement(".//*[@attr-code='US']");
+        actionsWithOurWebElements.clickOnWebElement(countryUSListItem);
     }
 
     public void clickStartShoppingButton() {
-        actionsWithOurWebElements.clickOnWebElement("//button[@type='submit' and contains(., 'Start shopping')]");
+        actionsWithOurWebElements.clickOnWebElement(buttonStartShopping);
     }
 
     public void clickOnBulkOrderLink() {
@@ -230,7 +247,7 @@ public class HomePage extends ParentPage {
     }
 
     public void clickOnMyProfileLink() {
-        actionsWithOurWebElements.clickOnWebElement(".//*[@id='accNavComponentDesktopOne']//a[@href='/my-account/update-profile']");
+        actionsWithOurWebElements.clickOnWebElement(linkMyProfile);
     }
 
     public void hoverOnMyAccountIcon() {
@@ -238,7 +255,7 @@ public class HomePage extends ParentPage {
     }
 
     public void clickOnMyAddressBookLink() {
-        actionsWithOurWebElements.clickOnWebElement(".//*[@id='accNavComponentDesktopOne']//a[@href='/my-account/address-book']");
+        actionsWithOurWebElements.clickOnWebElement(linkAddressBook);
     }
 
     public void hoverOnMiniCartIcon() {
@@ -250,7 +267,7 @@ public class HomePage extends ParentPage {
     }
 
     public boolean shopByManufacturerFlyOutIsActive() {
-       return actionsWithOurWebElements.isElementPresent(".//*[@class='sub-navigation-section__header']/a");
+       return actionsWithOurWebElements.isElementPresent(linkViewAllManufacturer);
     }
 
     public void hoverOnShopByEquipmentLink() {
@@ -270,7 +287,7 @@ public class HomePage extends ParentPage {
     }
 
     public void clickOnTechTownLink() {
-        actionsWithOurWebElements.clickOnWebElement(".//a[@data-type='techtown']");
+        actionsWithOurWebElements.clickOnWebElement(linkTechTown);
     }
 
     public boolean checkIfTechTownSitePageIsOpened() {
