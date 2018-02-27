@@ -14,6 +14,6 @@ public class ManufacturerLandingPage extends ParentPage {
     }
 
     public void clickOnManufactureLink(String manufacturerName) {
-        actionsWithOurWebElements.clickOnWebElement(".//*[@data-name='" + manufacturerName + "']");
+        actionsWithOurWebElements.clickOnWebElement(".//*[@data-name='" + manufacturerName + "'][@data-type='shop manufacturer']");
     }
 }
