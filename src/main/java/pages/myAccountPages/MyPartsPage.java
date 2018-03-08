@@ -1,16 +1,17 @@
-package pages;
+package pages.myAccountPages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
+import pages.ParentPage;
 
-public class MyAccountPages extends ParentPage {
+public class MyPartsPage extends ParentPage {
 
     @FindBy(className = "js-search-my-parts")
     WebElement inputSearchKeyword;
 
-    public MyAccountPages(WebDriver webDriver) {
+    public MyPartsPage(WebDriver webDriver) {
         super(webDriver);
     }
 

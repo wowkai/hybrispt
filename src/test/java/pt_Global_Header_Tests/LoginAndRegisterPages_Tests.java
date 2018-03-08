@@ -14,6 +14,7 @@ public class LoginAndRegisterPages_Tests extends ParentTest {
     public void loginPageOpenTest() {
         homePage.openHomePage();
         homePage.clickOnLoginLink();
+        System.out.println(loginPage.getTemplate());
         checkAcceptanceCriteria("Login page isn't opened", loginPage.getTemplate().contains("pageLabel-login"), true);
     }
 

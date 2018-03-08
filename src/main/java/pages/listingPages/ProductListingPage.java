@@ -1,4 +1,4 @@
-package pages;
+package pages.listingPages;
 
 /**
  * Product listing page is page where located all products and models.
@@ -8,6 +8,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import pages.ParentPage;
 
 import java.util.List;
 

@@ -39,6 +39,6 @@ public class AddProductToMyPartsTest extends ParentTest {
         modelDetailsPage.clickOnMyPartsLink();
 
         // verify if added product is present on MyParts page
-        checkAcceptanceCriteria("Cannot find added product on MyParts page. ", myAccountPages.searchAddedProduct(ADDED_PRODUCT) , true);
+        checkAcceptanceCriteria("Cannot find added product on MyParts page. ", myPartsPage.searchAddedProduct(ADDED_PRODUCT) , true);
     }
 }

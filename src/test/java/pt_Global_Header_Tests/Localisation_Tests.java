@@ -19,8 +19,8 @@ public class Localisation_Tests extends ParentTest {
     public void changeCountryTest() {
         homePage.openHomePage();
         homePage.clickOnCountryFlag();
-        homePage.clickOnNotInCountryLink();
-        homePage.selectCountryFromList("United States");
+        //homePage.clickOnNotInCountryLink();
+        homePage.selectCountryFromList("US");
         homePage.clickStartShoppingButton();
         checkAcceptanceCriteria("Parts Town .com site isn't opened", homePage.getUrl().contains("partstown.com"), true);
     }

@@ -9,6 +9,13 @@ import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import pages.*;
+import pages.cart_checkoutPages.*;
+import pages.listingPages.ManufacturerLandingPage;
+import pages.listingPages.ModelDetailsPage;
+import pages.listingPages.ProductListingPage;
+import pages.listingPages.SearchPage;
+import pages.myAccountPages.MyPartsPage;
+import pages.myAccountPages.MyProfilePage;
 
 import java.io.File;
 import java.util.concurrent.TimeUnit;
@@ -16,26 +23,26 @@ import java.util.concurrent.TimeUnit;
 
 public class ParentTest {
     WebDriver driver;
-    public RegistrationPage registrationPage;
-    public HomePage homePage;
-    public SearchPage searchPage;
-    public ProductDetailsPage productDetailsPage;
-    public ShoppingCartPage shoppingCartPage;
-    public ManufacturerLandingPage manufacturerLandingPage;
-    public ProductListingPage productListingPage;
-    public GuestCheckoutLoginPage guestCheckoutLoginPage;
-    public CheckoutPage checkoutPage;
-    public LoginPage loginPage;
-    public ModelDetailsPage modelDetailsPage;
-    public MyAccountPages myAccountPages;
-    public OrderConfirmationPage orderConfirmationPage;
-    public BulkOrderPage bulkOrderPage;
-    public TrackMyOrderPage trackMyOrderPage;
-    public OrderDetailsStatusPage orderDetailsStatusPage;
-    public MyProfilePage myProfilePage;
+    protected RegistrationPage registrationPage;
+    public static HomePage homePage;
+    protected SearchPage searchPage;
+    protected ProductDetailsPage productDetailsPage;
+    protected ShoppingCartPage shoppingCartPage;
+    protected ManufacturerLandingPage manufacturerLandingPage;
+    protected ProductListingPage productListingPage;
+    protected GuestCheckoutLoginPage guestCheckoutLoginPage;
+    protected CheckoutPage checkoutPage;
+    protected static LoginPage loginPage;
+    protected ModelDetailsPage modelDetailsPage;
+    protected MyPartsPage myPartsPage;
+    protected OrderConfirmationPage orderConfirmationPage;
+    protected BulkOrderPage bulkOrderPage;
+    protected TrackMyOrderPage trackMyOrderPage;
+    protected OrderDetailsStatusPage orderDetailsStatusPage;
+    protected MyProfilePage myProfilePage;
 
     private Utils utils = new Utils();
-    private boolean isTestPass = false;
+    private static boolean isTestPass = false;
     private String pathToScreenShot;
     public ExcelDriver excelDriver;
 
@@ -43,7 +50,7 @@ public class ParentTest {
     //public TestName testName = new TestName();
 
     @BeforeMethod
-    public void setUp() {
+    public void setUp() throws Exception {
         //pathToScreenShot = "..\\VovkA_project\\target\\screenshot\\" + this.getClass().getPackage().getName() + "\\" + this.getClass().getName() + "\\" + this.testName.getMethodName() + ".jpg";
         File fileFF = new File("./drivers/chromedriver.exe");
         System.setProperty("webdriver.chrome.driver", fileFF.getAbsolutePath());
@@ -63,7 +70,7 @@ public class ParentTest {
         checkoutPage = new CheckoutPage(driver);
         loginPage = new LoginPage(driver);
         modelDetailsPage = new ModelDetailsPage(driver);
-        myAccountPages = new MyAccountPages(driver);
+        myPartsPage = new MyPartsPage(driver);
         orderConfirmationPage = new OrderConfirmationPage(driver);
         bulkOrderPage = new BulkOrderPage(driver);
         trackMyOrderPage = new TrackMyOrderPage(driver);
@@ -78,7 +85,7 @@ public class ParentTest {
       driver.quit();
     }
 
-    protected void checkAcceptanceCriteria(String message, boolean actual, boolean expected) {
+    protected static void checkAcceptanceCriteria(String message, boolean actual, boolean expected) {
         Assert.assertTrue(actual == expected, message);
         isTestPass = true;
     }

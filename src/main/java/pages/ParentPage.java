@@ -1,20 +1,24 @@
 package pages;
 
 import libs.ActionsWithOurWebElements;
+import libs.UIMap;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 public class ParentPage {
-    WebDriver webDriver;
-    Logger logger;
-    ActionsWithOurWebElements actionsWithOurWebElements;
-    WebDriverWait webDriverWait20;
+    protected WebDriver webDriver;
+    protected Logger logger;
+    protected ActionsWithOurWebElements actionsWithOurWebElements;
+    protected WebDriverWait webDriverWait20;
+    protected UIMap uimap;
+
 
 
     @FindBy(tagName = "h1")
@@ -25,13 +29,16 @@ public class ParentPage {
         logger = Logger.getLogger(getClass());
         actionsWithOurWebElements = new ActionsWithOurWebElements(webDriver);
         PageFactory.initElements(webDriver, this);
+        webDriverWait20 = new WebDriverWait(webDriver, 30);
+        uimap = new UIMap("src/locator.properties");
     }
 
-    public String getTitle() {
+    private String getTitle() {
         return webDriver.getTitle();
     }
 
     public String getTemplate() {
+        webDriverWait20.until(ExpectedConditions.presenceOfElementLocated(By.tagName("Body")));
         return webDriver.findElement(By.tagName("Body")).getAttribute("class");
     }
 
@@ -43,7 +50,7 @@ public class ParentPage {
         Assert.assertEquals("Title not expected",getTitle(),title);
     }
 
-    public boolean checkPageTemplate(String pageTemplate) {
+    protected boolean checkPageTemplate(String pageTemplate) {
         return actionsWithOurWebElements.isElementPresent(".//*[contains(@class, '"+ pageTemplate + "')]");
     }
 

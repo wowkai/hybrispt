@@ -5,6 +5,7 @@ package pages;
  * navigation menu in header
  */
 
+import org.openqa.selenium.By;
 import org.testng.Assert;
 import libs.ConfigData;
 import org.openqa.selenium.WebDriver;
@@ -111,7 +112,7 @@ public class HomePage extends ParentPage {
     WebElement currentSiteLanguage;
 
     @FindBy(id = "country")
-    WebElement inputFieldCountry;
+    WebElement dropDownCountry;
 
     @FindBy(css = "div.nav__minicart div.not-empty")
     WebElement miniCartIconWithProducts;
@@ -125,10 +126,12 @@ public class HomePage extends ParentPage {
         try {
             webDriver.get(ConfigData.getCfgValue("base_url"));
             logger.info("Homepage was opened");
+            closeChangeCountryPopup();
         } catch (Exception e) {
             logger.error("Can not open homepage url");
             Assert.fail("Can not open homepage url");
         }
+
     }
 
     // method that checks if message about success registration is shown
@@ -233,8 +236,8 @@ public class HomePage extends ParentPage {
     }
 
     public void selectCountryFromList(String country) {
-        actionsWithOurWebElements.enterTextIntoInput(inputFieldCountry, country);
-        actionsWithOurWebElements.clickOnWebElement(countryUSListItem);
+        actionsWithOurWebElements.selectItemInDropdownByValue(dropDownCountry, country);
+        //actionsWithOurWebElements.clickOnWebElement(countryUSListItem);
     }
 
     public void clickStartShoppingButton() {
@@ -313,5 +316,9 @@ public class HomePage extends ParentPage {
 
     public void clickOnPaymentDetailsLink() {
         actionsWithOurWebElements.clickOnWebElement(linkPaymentDetails);
+    }
+
+    public void closeChangeCountryPopup() {
+        webDriver.findElement(By.cssSelector("button.popup__close-btn")).click();
     }
 }

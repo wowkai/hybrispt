@@ -1,4 +1,4 @@
-package pages;
+package pages.cart_checkoutPages;
 
 /**
  * Guest Checkout Login page is the page where user could login to the system with existing credentials or enter email for guest checkout
@@ -8,6 +8,7 @@ package pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import pages.ParentPage;
 
 public class GuestCheckoutLoginPage extends ParentPage {
 

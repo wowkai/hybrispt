@@ -1,4 +1,4 @@
-package pages;
+package pages.listingPages;
 
 /**
  * Search page is used to show listing of products which was returned after using site search feature
@@ -6,6 +6,7 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import pages.ParentPage;
 
 public class SearchPage extends ParentPage {
     String countParts;

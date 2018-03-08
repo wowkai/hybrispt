@@ -1,4 +1,4 @@
-package pages;
+package pages.cart_checkoutPages;
 
 /**
  * Checkout page is consist of few steps, where user should enter information about shipping, payment, etc
@@ -7,6 +7,7 @@ package pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import pages.ParentPage;
 
 public class CheckoutPage extends ParentPage {
 

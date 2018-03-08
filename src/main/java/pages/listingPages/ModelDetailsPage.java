@@ -1,4 +1,4 @@
-package pages;
+package pages.listingPages;
 
 /**
  * Model details page is the listing product page which contains all products which belongs to certain Model
@@ -7,6 +7,7 @@ package pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import pages.ParentPage;
 
 public class ModelDetailsPage extends ParentPage {
 

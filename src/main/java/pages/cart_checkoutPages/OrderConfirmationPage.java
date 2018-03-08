@@ -1,6 +1,7 @@
-package pages;
+package pages.cart_checkoutPages;
 
 import org.openqa.selenium.WebDriver;
+import pages.ParentPage;
 
 /**
  * Order Confirmation page is shown only if order was placed successfully.

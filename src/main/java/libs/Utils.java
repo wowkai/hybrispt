@@ -8,6 +8,8 @@ import org.openqa.selenium.WebDriver;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Calendar;
+import java.util.TimeZone;
 
 public class Utils {
     private Logger log;
@@ -29,5 +31,10 @@ public class Utils {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public static int randomValue() {
+        Calendar calendar = Calendar.getInstance(TimeZone.getDefault());
+        return calendar.get(Calendar.MINUTE)+calendar.get(Calendar.SECOND)+ calendar.get(Calendar.MILLISECOND);
     }
 }
