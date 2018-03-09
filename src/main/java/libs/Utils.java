@@ -33,8 +33,8 @@ public class Utils {
         }
     }
 
-    public static int randomValue() {
+    public static String randomValue() {
         Calendar calendar = Calendar.getInstance(TimeZone.getDefault());
-        return calendar.get(Calendar.MINUTE)+calendar.get(Calendar.SECOND)+ calendar.get(Calendar.MILLISECOND);
+        return calendar.get(Calendar.MINUTE) + "" + calendar.get(Calendar.SECOND)+ calendar.get(Calendar.MILLISECOND);
     }
 }

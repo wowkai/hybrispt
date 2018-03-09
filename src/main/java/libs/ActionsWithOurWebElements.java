@@ -26,7 +26,7 @@ public class ActionsWithOurWebElements {
 
     public void enterTextIntoInput(WebElement input, String text) {
         try {
-            input.clear();
+            //input.clear();
             input.sendKeys(text);
             logger.info(text + " was inputed to input ");
         } catch (Exception e) {
@@ -76,6 +76,16 @@ public class ActionsWithOurWebElements {
             WebElement webElement = webDriver.findElement(By.xpath(locator));
             webDriverWait20.until(ExpectedConditions.visibilityOf(webElement));
             return webElement.isDisplayed() && webElement.isEnabled();
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    public boolean isElementDisplayed(String locator) {
+        try {
+            WebElement webElement = webDriver.findElement(By.xpath(locator));
+            webDriverWait20.until(ExpectedConditions.visibilityOf(webElement));
+            return webElement.isDisplayed();
         } catch (Exception e) {
             return false;
         }

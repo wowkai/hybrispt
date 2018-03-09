@@ -1,6 +1,7 @@
 package parentTest;
 
 import libs.ExcelDriver;
+import libs.UIMap;
 import libs.Utils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -14,6 +15,7 @@ import pages.listingPages.ManufacturerLandingPage;
 import pages.listingPages.ModelDetailsPage;
 import pages.listingPages.ProductListingPage;
 import pages.listingPages.SearchPage;
+import pages.myAccountPages.AddressBookPage;
 import pages.myAccountPages.MyPartsPage;
 import pages.myAccountPages.MyProfilePage;
 
@@ -40,6 +42,7 @@ public class ParentTest {
     protected TrackMyOrderPage trackMyOrderPage;
     protected OrderDetailsStatusPage orderDetailsStatusPage;
     protected MyProfilePage myProfilePage;
+    protected AddressBookPage addressBookPage;
 
     private Utils utils = new Utils();
     private static boolean isTestPass = false;
@@ -76,8 +79,10 @@ public class ParentTest {
         trackMyOrderPage = new TrackMyOrderPage(driver);
         orderDetailsStatusPage = new OrderDetailsStatusPage(driver);
         myProfilePage = new MyProfilePage(driver);
+        addressBookPage = new AddressBookPage(driver);
 
         excelDriver = new ExcelDriver();
+
     }
 
     @AfterMethod

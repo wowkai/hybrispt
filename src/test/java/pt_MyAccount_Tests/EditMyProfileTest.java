@@ -16,7 +16,7 @@ public class EditMyProfileTest extends ParentTest {
         homePage.clickOnMyProfileLink();
 
         String old_name = myProfilePage.getFirstName();
-        String firstName = "First" + Integer.toString(Utils.randomValue());
+        String firstName = "First" + Utils.randomValue();
         myProfilePage.setNewFirstName(firstName);
 
         myProfilePage.clickOnUpdateMyProfileButton();

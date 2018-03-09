@@ -17,7 +17,7 @@ public class ParentPage {
     protected Logger logger;
     protected ActionsWithOurWebElements actionsWithOurWebElements;
     protected WebDriverWait webDriverWait20;
-    protected UIMap uimap;
+    protected UIMap datafile;
 
 
 
@@ -30,7 +30,7 @@ public class ParentPage {
         actionsWithOurWebElements = new ActionsWithOurWebElements(webDriver);
         PageFactory.initElements(webDriver, this);
         webDriverWait20 = new WebDriverWait(webDriver, 30);
-        uimap = new UIMap("src/locator.properties");
+        datafile = new UIMap("src/datafile.properties");
     }
 
     private String getTitle() {

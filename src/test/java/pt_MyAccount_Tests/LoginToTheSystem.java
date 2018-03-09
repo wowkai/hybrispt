@@ -5,8 +5,7 @@ import pages.HomePage;
 import parentTest.ParentTest;
 
 public class LoginToTheSystem extends ParentTest {
-    public static UIMap datafile;
-
+    private static UIMap datafile;
     // general method for user login
     public static void validLogin() throws Exception {
         datafile = new UIMap("src/datafile.properties");
