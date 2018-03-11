@@ -281,7 +281,7 @@ public class HomePage extends ParentPage {
     }
 
     public boolean shopByEquipmentFlyOutIsActive() {
-        return actionsWithOurWebElements.isElementPresent(".//*[@class='nav__links js-equip-list']");
+        return actionsWithOurWebElements.isElementPresentByXpath(".//*[@class='nav__links js-equip-list']");
     }
 
     public void hoverOnInsidePTLink() {
@@ -289,7 +289,7 @@ public class HomePage extends ParentPage {
     }
 
     public boolean insidePTFlyOutIsActive() {
-        return actionsWithOurWebElements.isElementPresent(".//div[@class='sub__navigation js_sub__navigation js-mobile-accordion']");
+        return actionsWithOurWebElements.isElementPresentByXpath(".//div[@class='sub__navigation js_sub__navigation js-mobile-accordion']");
     }
 
     public void clickOnTechTownLink() {

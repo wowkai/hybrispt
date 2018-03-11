@@ -1,7 +1,6 @@
 package parentTest;
 
 import libs.ExcelDriver;
-import libs.UIMap;
 import libs.Utils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -11,13 +10,9 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import pages.*;
 import pages.cart_checkoutPages.*;
-import pages.listingPages.ManufacturerLandingPage;
-import pages.listingPages.ModelDetailsPage;
-import pages.listingPages.ProductListingPage;
-import pages.listingPages.SearchPage;
-import pages.myAccountPages.AddressBookPage;
-import pages.myAccountPages.MyPartsPage;
-import pages.myAccountPages.MyProfilePage;
+import pages.listingPages.*;
+import pages.myAccountPages.*;
+import fragments.*;
 
 import java.io.File;
 import java.util.concurrent.TimeUnit;
@@ -43,6 +38,7 @@ public class ParentTest {
     protected OrderDetailsStatusPage orderDetailsStatusPage;
     protected MyProfilePage myProfilePage;
     protected AddressBookPage addressBookPage;
+    protected AvalaraAddressValidationPopup avalaraAddressValidationPopup;
 
     private Utils utils = new Utils();
     private static boolean isTestPass = false;
@@ -60,7 +56,7 @@ public class ParentTest {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--start-maximized");
         driver = new ChromeDriver(options);
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
         //driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
         registrationPage = new RegistrationPage(driver);
         homePage = new HomePage(driver);
@@ -80,6 +76,8 @@ public class ParentTest {
         orderDetailsStatusPage = new OrderDetailsStatusPage(driver);
         myProfilePage = new MyProfilePage(driver);
         addressBookPage = new AddressBookPage(driver);
+        avalaraAddressValidationPopup = new AvalaraAddressValidationPopup(driver);
+
 
         excelDriver = new ExcelDriver();
 

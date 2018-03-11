@@ -31,10 +31,10 @@ public class TrackMyOrderPage extends ParentPage {
     }
 
     public boolean isOrderStatusPage() {
-        return actionsWithOurWebElements.isElementPresent(".//h2[@class=' account-content__title title']"); // h2.account-content__title
+        return actionsWithOurWebElements.isElementPresentByXpath(".//h2[@class=' account-content__title title']"); // h2.account-content__title
     }
 
     public boolean isTrackMyOrderPage() {
-        return actionsWithOurWebElements.isElementPresent(".//h2[@class='account-title account-title--dropdown-menu']");
+        return actionsWithOurWebElements.isElementPresentByXpath(".//h2[@class='account-title account-title--dropdown-menu']");
     }
 }

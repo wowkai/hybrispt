@@ -71,11 +71,21 @@ public class ActionsWithOurWebElements {
         }
     }
 
-    public boolean isElementPresent(String locator) {
+    public boolean isElementPresentByXpath(String locator) {
         try {
             WebElement webElement = webDriver.findElement(By.xpath(locator));
+            System.out.println(webElement.getText());
             webDriverWait20.until(ExpectedConditions.visibilityOf(webElement));
-            return webElement.isDisplayed() && webElement.isEnabled();
+            return webElement.isDisplayed(); //&& webElement.isEnabled();
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    public boolean isElementPresentByCss(String locator) {
+        try {
+            webDriverWait20.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(locator)));
+            return true;
         } catch (Exception e) {
             return false;
         }
@@ -182,4 +192,5 @@ public class ActionsWithOurWebElements {
             return "";
         }
     }
+
 }

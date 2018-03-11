@@ -3,9 +3,11 @@ package pages.myAccountPages;
 import libs.UIMap;
 import libs.Utils;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.ParentPage;
+
+import java.util.List;
 
 public class AddressBookPage extends ParentPage {
 
@@ -83,16 +85,15 @@ public class AddressBookPage extends ParentPage {
     }
 
 
-    public void clcikOnButtonApply() throws Exception {
+    public void clickOnButtonApply() throws Exception {
         actionsWithOurWebElements.clickOnWebElement(webDriver.findElement(uimap.
                 getLocator("myaccount.addressBook.btnApply")));
     }
 
-    public String enterValidAddress() throws Exception {
-        String addressName = "NewAddress" + Utils.randomValue();
-        enterAddressName(addressName);
+    public void enterValidAddress(String addressName) throws Exception {
         enterFirstName();
         enterLastName();
+        enterAddressName(addressName);
         enterValidAddressLine1();
         //enterValidAddressLine2();
         selectCountry();
@@ -100,10 +101,38 @@ public class AddressBookPage extends ParentPage {
         enterValidCity();
         enterValidZipCode();
         enterValidPhone();
-        return addressName;
     }
 
     public boolean newAddressIsPresent(String newAddress) {
-        return actionsWithOurWebElements.isElementDisplayed("//h2[contains(text(),'"+ newAddress +"')]");
+        return actionsWithOurWebElements.isElementPresentByXpath("//h2[contains(text(),'"+newAddress+"')]");
+    }
+
+    public void enterAddressForValidation(String addressName) throws Exception {
+        enterAddressName(addressName);
+        enterFirstName();
+        enterLastName();
+        enterValidAddressLine1();
+        //enterValidAddressLine2();
+        selectCountry();
+        selectRegion();
+        actionsWithOurWebElements.enterTextIntoInput(webDriver.findElement(uimap
+                .getLocator("myaccount.addressBook.edtCity")), "Wrong city");
+        //enterValidCity();
+        enterValidZipCode();
+        enterValidPhone();
+    }
+
+
+    public void deleteAllAddedAddresses() throws Exception {
+        List<WebElement> addresses = webDriver.findElements(uimap.getLocator("myaccount.addressBook.lnkRemoveAddress"));
+
+        for (int i = 0; i<addresses.size(); i++) {
+
+            actionsWithOurWebElements.clickOnWebElement(webDriver.findElements(uimap
+                    .getLocator("myaccount.addressBook.lnkRemoveAddress")).get(0));
+            actionsWithOurWebElements.clickOnWebElement(webDriver.findElement(uimap
+                    .getLocator("myaccount.addressBook.lnkConfirmDeletingAddress")));
+            webDriver.navigate().refresh();
+        }
     }
 }

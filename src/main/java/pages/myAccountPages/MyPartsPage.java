@@ -18,7 +18,7 @@ public class MyPartsPage extends ParentPage {
     public boolean searchAddedProduct(String addedProduct) {
         try {
             actionsWithOurWebElements.enterTextIntoInput(inputSearchKeyword, addedProduct);
-            return actionsWithOurWebElements.isElementPresent(".//*[@class='parts-info__code' and contains(text(), '" + addedProduct + "')]");
+            return actionsWithOurWebElements.isElementPresentByXpath(".//*[@class='parts-info__code' and contains(text(), '" + addedProduct + "')]");
         } catch (Exception e) {
             logger.error("Can not find " + addedProduct + " on the MyParts page.");
             Assert.fail("Can not find " + addedProduct + " on the MyParts page.");
