@@ -22,7 +22,7 @@ public class Localisation_Tests extends ParentTest {
         //homePage.clickOnNotInCountryLink();
         homePage.selectCountryFromList("US");
         homePage.clickStartShoppingButton();
-        checkAcceptanceCriteria("Parts Town .com site isn't opened", homePage.getUrl().contains("partstown.com"), true);
+        checkAcceptanceCriteria("Parts Town .com site isn't opened", homePage.getUrl().contains(".com"), true);
     }
 
 

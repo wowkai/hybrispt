@@ -6,6 +6,7 @@ package pages;
  */
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.testng.Assert;
 import libs.ConfigData;
 import org.openqa.selenium.WebDriver;
@@ -24,7 +25,7 @@ public class HomePage extends ParentPage {
     //@FindBy(xpath = ".//*[@class='form-control' and @type='text']")
     WebElement inputSearchForm;
 
-    @FindBy(className = ".find-parts span.input-group-btn")
+    @FindBy(css = "button.btn-default[type='submit']")
     WebElement buttonSearch;
 
     @FindBy(css = "span.nav__link a[href='/manufacturers']")
@@ -142,10 +143,12 @@ public class HomePage extends ParentPage {
     public void searchBySearchKeyword(String searchKeyword) {
         //actionsWithOurWebElements.clickOnWebElement(inputSearchForm);
         actionsWithOurWebElements.enterTextIntoInput(inputSearchForm, searchKeyword);
-        clickOnSearchButton();
+        inputSearchForm.sendKeys(Keys.RETURN);
     }
 
     public void clickOnSearchButton() {
+        System.out.println(buttonSearch.getText());
+        buttonSearch.click();
         actionsWithOurWebElements.clickOnWebElement(buttonSearch);
     }
 

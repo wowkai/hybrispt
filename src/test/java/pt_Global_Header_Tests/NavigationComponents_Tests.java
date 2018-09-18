@@ -30,7 +30,7 @@ public class NavigationComponents_Tests extends ParentTest {
     }
 
     // test that TechTown site is opened after click on TechTown link
-    @Test
+    @Test(enabled = false)
     public void clickOnTechTownLinkTest() {
         homePage.openHomePage();
         homePage.clickOnTechTownLink();

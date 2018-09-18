@@ -26,7 +26,7 @@ public class LoginAndRegisterPages_Tests extends ParentTest {
         checkAcceptanceCriteria("Create an account page isn't opened", registrationPage.getTemplate().contains("pageLabel-PTRegisterPage"), true);
     }
 
-    @Test(enabled = false)
+    @Test(enabled = true)
     // new user registration test
     public void newUserRegistrationTest() throws IOException {
         Map dataFromExcelForRegistration = excelDriver.getData(ConfigData.getCfgValue("GlobalHeader_Config_file"), "keywords");
