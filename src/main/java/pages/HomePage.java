@@ -147,8 +147,7 @@ public class HomePage extends ParentPage {
     }
 
     public void clickOnSearchButton() {
-        System.out.println(buttonSearch.getText());
-        buttonSearch.click();
+        //buttonSearch.click();
         actionsWithOurWebElements.clickOnWebElement(buttonSearch);
     }
 
@@ -210,9 +209,9 @@ public class HomePage extends ParentPage {
     // Name of language in variable should be: 'FR' or 'French', 'EN' or 'English'.
     public void changeLanguage(String language) {
         actionsWithOurWebElements.hoverOnWebElement(languageSelector);
-        if (language == "FR" || language == "French" ) {
+        if (language.equals("FR") || language.equals("French") ) {
             actionsWithOurWebElements.clickOnWebElement(frenchLanguageInputField);
-        } else if (language == "EN" || language == "English" ) {
+        } else if (language.equals("EN") || language.equals("English") ) {
             actionsWithOurWebElements.clickOnWebElement(englishLanguageInputField);
         } else {
             logger.error("Name of language should be: FR or French, EN or English. Please try again");
@@ -223,8 +222,7 @@ public class HomePage extends ParentPage {
 
     public String checkCurrentLanguage() {
         try {
-            String text = currentSiteLanguage.getText();
-            return text;
+            return currentSiteLanguage.getText();
         } catch (Exception e) {
             Assert.fail("Cannot work with element");
             return "";
@@ -302,7 +300,7 @@ public class HomePage extends ParentPage {
 
     public boolean checkIfTechTownSitePageIsOpened() {
         try {
-            ArrayList tabs2 = new ArrayList(webDriver.getWindowHandles());
+            ArrayList tabs2 = new ArrayList<String>(webDriver.getWindowHandles());
             webDriver.switchTo().window((String) tabs2.get(1));
             Boolean result = webDriver.getCurrentUrl().contains("techtown.partstown.com");
             if (result) {
