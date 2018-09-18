@@ -20,11 +20,11 @@ public class HomePage extends ParentPage {
     @FindBy(xpath = ".//div[text()='Thank you for registering!']")
     WebElement registrationText;
 
-    @FindBy(css = "input.form-control[type='text']")
+    @FindBy(css = "div.find-parts input")
     //@FindBy(xpath = ".//*[@class='form-control' and @type='text']")
     WebElement inputSearchForm;
 
-    @FindBy(className = "input-group-btn")
+    @FindBy(className = ".find-parts span.input-group-btn")
     WebElement buttonSearch;
 
     @FindBy(css = "span.nav__link a[href='/manufacturers']")
@@ -140,6 +140,7 @@ public class HomePage extends ParentPage {
     }
 
     public void searchBySearchKeyword(String searchKeyword) {
+        //actionsWithOurWebElements.clickOnWebElement(inputSearchForm);
         actionsWithOurWebElements.enterTextIntoInput(inputSearchForm, searchKeyword);
         clickOnSearchButton();
     }

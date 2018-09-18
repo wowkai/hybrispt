@@ -18,7 +18,8 @@ public class Global_Search_Tests extends ParentTest {
     public void generalSearchKeywordTest() throws IOException {
         Map dataFromExcelForSearch = excelDriver.getData(ConfigData.getCfgValue("GlobalHeader_Config_file"), "keywords");
         homePage.openHomePage();
-        homePage.searchBySearchKeyword(dataFromExcelForSearch.get("GENERAL_SEARCH_KEYWORD").toString());
+        homePage.searchBySearchKeyword("thermostat");
+        //homePage.searchBySearchKeyword(dataFromExcelForSearch.get("GENERAL_SEARCH_KEYWORD").toString());
         checkAcceptanceCriteria("Search page isn't opened", searchPage.getTemplate().contains("searchListPage"), true);
         checkAcceptanceCriteria("Search keyword isn't applied as refinement", searchPage.checkIfRefinementIsApplied(dataFromExcelForSearch.get("GENERAL_SEARCH_KEYWORD").toString()), true);
     }
